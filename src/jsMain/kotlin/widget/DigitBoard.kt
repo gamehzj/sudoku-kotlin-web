@@ -11,23 +11,23 @@ import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun DigitBoard(boardDto: DigitBoardDto) {
-    val bacClo: CSSColorValue
-    val textClo: CSSColorValue
+    val bacCol: CSSColorValue
+    val textCol: CSSColorValue
     val text: String = if (boardDto.value.value == null) {
         ""
     } else {
         boardDto.value.value.toString()
     }
     if (boardDto.focus) {
-        bacClo = Color.blue
-        textClo = if (boardDto.error) {
+        bacCol = Color.blue
+        textCol = if (boardDto.error) {
             Color.red
         } else {
             Color.white
         }
     } else {
-        bacClo = Color.transparent
-        textClo = if (boardDto.error) {
+        bacCol = Color.transparent
+        textCol = if (boardDto.error) {
             Color.red
         } else if (boardDto.initNum.value) {
             Color.black
@@ -38,8 +38,8 @@ fun DigitBoard(boardDto: DigitBoardDto) {
     Span(
         attrs = {
             style {
-                color(textClo)
-                backgroundColor(bacClo)
+                color(textCol)
+                backgroundColor(bacCol)
             }
         } // inline style
     ) {

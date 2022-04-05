@@ -9,14 +9,14 @@ class BoardDto(size: Int) {
             arrayOf(
                 arrayOf(
                     arrayOf(
-                        DigitBoardDto(value = null, initNum = false, error = false, focus = false),
-                        DigitBoardDto(value = null, initNum = true, error = false, focus = false),
-                        DigitBoardDto(value = null, initNum = true, error = true, focus = false),
+                        DigitBoardDto(value = 1, initNum = false, error = false, focus = false),
+                        DigitBoardDto(value = 2, initNum = false, error = false, focus = false),
+                        DigitBoardDto(value = 3, initNum = false, error = false, focus = false),
                     ),
                     arrayOf(
-                        DigitBoardDto(value = null, initNum = true, error = true, focus = true),
-                        DigitBoardDto(value = null, initNum = false, error = true, focus = true),
-                        DigitBoardDto(value = null, initNum = false, error = false, focus = true),
+                        DigitBoardDto(value = null, initNum = false, error = false, focus = false),
+                        DigitBoardDto(value = null, initNum = false, error = false, focus = false),
+                        DigitBoardDto(value = null, initNum = false, error = false, focus = false),
                     ),
                     arrayOf(
                         DigitBoardDto(value = null, initNum = false, error = false, focus = false),

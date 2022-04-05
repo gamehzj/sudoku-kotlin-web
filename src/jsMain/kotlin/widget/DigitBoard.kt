@@ -2,13 +2,47 @@ package widget
 
 import androidx.compose.runtime.Composable
 import module.DigitBoardDto
+import org.jetbrains.compose.web.css.CSSColorValue
+import org.jetbrains.compose.web.css.Color
+import org.jetbrains.compose.web.css.backgroundColor
+import org.jetbrains.compose.web.css.color
+import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun DigitBoard(boardDto: DigitBoardDto) {
-    if (boardDto.value.value == null) {
-        Text("")
+    val bacClo: CSSColorValue
+    val textClo: CSSColorValue
+    val text: String = if (boardDto.value.value == null) {
+        ""
     } else {
-        Text(boardDto.value.value.toString())
+        boardDto.value.value.toString()
+    }
+    if (boardDto.focus) {
+        bacClo = Color.blue
+        textClo = if (boardDto.error) {
+            Color.red
+        } else {
+            Color.white
+        }
+    } else {
+        bacClo = Color.transparent
+        if (boardDto.error) {
+            textClo = Color.red
+        } else if (boardDto.initNum.value) {
+            textClo = Color.black
+        } else {
+            textClo = Color.blue;
+        }
+    }
+    Span(
+        attrs = {
+            style {
+                color(textClo)
+                backgroundColor(bacClo)
+            }
+        } // inline style
+    ) {
+        Text(text)
     }
 }

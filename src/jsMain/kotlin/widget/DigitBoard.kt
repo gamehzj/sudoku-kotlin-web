@@ -27,12 +27,12 @@ fun DigitBoard(boardDto: DigitBoardDto) {
         }
     } else {
         bacClo = Color.transparent
-        if (boardDto.error) {
-            textClo = Color.red
+        textClo = if (boardDto.error) {
+            Color.red
         } else if (boardDto.initNum.value) {
-            textClo = Color.black
+            Color.black
         } else {
-            textClo = Color.blue;
+            Color.blue
         }
     }
     Span(

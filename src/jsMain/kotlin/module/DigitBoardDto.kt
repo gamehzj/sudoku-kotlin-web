@@ -15,5 +15,4 @@ class DigitBoardDto(value: Int?, initNum: Boolean, error: Boolean, focus: Boolea
         this.error = mutableStateOf(error)
         this.focus = mutableStateOf(focus)
     }
-
 }

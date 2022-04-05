@@ -1,6 +1,8 @@
 package widget
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import module.BoardDto
 import org.jetbrains.compose.web.dom.Table
 import org.jetbrains.compose.web.dom.Td
 import org.jetbrains.compose.web.dom.Th
@@ -10,6 +12,8 @@ import org.jetbrains.compose.web.dom.Tr
 fun boardThree() {
     board(3)
 }
+
+val boardDto = mutableStateOf(BoardDto(size = 3))
 
 @Composable
 fun board(size: Int) {
@@ -23,7 +27,7 @@ fun board(size: Int) {
                                 Tr {
                                     repeat(size) { iiiit ->
                                         Th {
-                                            DigitBoard(1)
+                                            DigitBoard(boardDto.value.data[it][iit][iiit][iiiit])
                                         }
                                     }
                                 }

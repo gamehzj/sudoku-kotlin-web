@@ -18,16 +18,16 @@ fun DigitBoard(boardDto: DigitBoardDto) {
     } else {
         boardDto.value.value.toString()
     }
-    if (boardDto.focus) {
+    if (boardDto.focus.value) {
         bacCol = Color.blue
-        textCol = if (boardDto.error) {
+        textCol = if (boardDto.error.value) {
             Color.red
         } else {
             Color.white
         }
     } else {
         bacCol = Color.transparent
-        textCol = if (boardDto.error) {
+        textCol = if (boardDto.error.value) {
             Color.red
         } else if (boardDto.initNum.value) {
             Color.black

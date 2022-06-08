@@ -2,7 +2,7 @@ import org.jetbrains.compose.compose
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
-    kotlin("multiplatform") version "1.6.10"
+    kotlin("multiplatform") version "1.7.0"
     id("org.jetbrains.compose") version "1.1.1"
     id("org.jlleitschuh.gradle.ktlint") version "10.2.1"
 }
